@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WellcomeActivity">
+
+    <TextView
+        android:id="@+id/textser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.107" />
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="278dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="80dp">
+
+
+        <Button
+            android:id="@+id/bregister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrar usuario"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="236dp"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/bver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver lista"
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="322dp"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/beditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modificar usuario"
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="403dp"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+    "
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
