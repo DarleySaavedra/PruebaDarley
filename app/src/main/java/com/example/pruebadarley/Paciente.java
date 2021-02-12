@@ -2,11 +2,17 @@ package com.example.pruebadarley;
 
 public class Paciente {
 
-     String nombre;
+    String nombre;
     int  dni;
     String hobbie;
 
-    public Paciente(){
+    Paciente(){
+
+    }
+    public Paciente(String nombre, int dni, String hobbie){
+    this.nombre = nombre;
+    this.dni = dni;
+    this.hobbie = hobbie;
 
     }
 

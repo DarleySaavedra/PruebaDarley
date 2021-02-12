@@ -6,19 +6,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pruebadarley.Retrofit.Model.Posts;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
-
+    RecyclerView recview;
+    myadapter adapter;
+    /*
     RecyclerView rv;
     List<Paciente> destino;
     FirebaseRecyclerAdapter<Paciente, myadapter.myviewholder> adapter;
     DatabaseReference databaseReference;
 
-
+*/
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +56,31 @@ public class ListActivity extends AppCompatActivity {
 
 
     }
-    private abstract class FirebaseRecyclerAdapter<P, M extends RecyclerView.ViewHolder> {
-        public FirebaseRecyclerAdapter(Class<P> pacienteClass, int activity_list, Class<M> myviewholderClass, DatabaseReference login) {
-        }
+*/
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list);
+        recview=(RecyclerView)findViewById(R.id.listausuarios);
+        recview.setLayoutManager(new LinearLayoutManager(this));
+        FirebaseRecyclerOptions<Paciente> options =
+                new FirebaseRecyclerOptions.Builder<Paciente>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Paciente"), Paciente.class)
+                        .build();
 
-        protected abstract void populateViewHolder(myadapter.myviewholder myviewholder, Paciente Paciente, int i);
+        adapter=new myadapter(options);
+        recview.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
 }
