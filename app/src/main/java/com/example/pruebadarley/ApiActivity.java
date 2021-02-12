@@ -29,6 +29,7 @@ public class ApiActivity extends AppCompatActivity {
         getPosts();
     }
     private  void getPosts(){
+        //hola pruyeba darley
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
